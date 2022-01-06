@@ -3,7 +3,7 @@ import './App.css';
 import AssemblyLine from './AssemblyLine';
 
 function App() {
-  const [stages, setStages] = useState([['hi', 'hi', 'hi'], [], [], []]);
+  const [stages, setStages] = useState([['Brain Storming', ['hi', 'hi', 'hi']], ['Developmen', []], ['Testing', []], ['Deployment', []]]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
