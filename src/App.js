@@ -3,9 +3,24 @@ import './App.css';
 import AssemblyLine from './AssemblyLine';
 
 function App() {
-  const [stages, setStages] = useState(['sanityCheck'])
+  const [stages, setStages] = useState([['hi', 'hi', 'hi'], [], [], []]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  
+  };
+
+  const handleKeyPress = (e) => {
+    // check what button then call handleSubmit
+  };
+
+
   return (
-    <div className="App">
+    <div className="App" >
+      <form action="">
+        <input className="assembly-add-item" type="text" name="assembly-add-item"  />
+        <button type="submit" onClick={(e) => handleSubmit(e)} onKeyPress={(e) => handleKeyPress(e)}>Add Item</button>
+      </form>
       <AssemblyLine stages={stages} /> 
     </div>
   );
