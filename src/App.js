@@ -6,7 +6,7 @@ function App() {
   const [stages, setStages] = useState([['Brain Storming', ['one', 'two', 'three']], ['Developmen', []], ['Testing', []], ['Deployment', []]]);
   const [message, setMessage] = useState('')
 
-  
+  console.log(stages);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,16 +22,27 @@ function App() {
   };
 
   const itemClick = (e) => {
+    const tempArray = [...stages]
     const item = e.target.innerHTML;
-    const stageIndex = e.target.value;
-    console.log(stages[stageIndex][1].filter(word => word === item), stageIndex);
+    const stageIndex = parseInt(e.target.value);
+    const itemIndex = stages[stageIndex][1].indexOf(item);
+
+    tempArray[stageIndex][1].splice(itemIndex, 1);
     // left button
-    if(e.button === 0 ) {
+    if(e.button === 0 && stageIndex !== 3) {
       // find item in stages and prepend to next stage
+      const prependIndex = stageIndex  + 1;
+      
+      tempArray[prependIndex][1].unshift(item);
+      setStages(tempArray);
     } 
     // right button
-    else if (e.button === 2 ){
+    else if (e.button === 2 && stageIndex !== 0 ){
       // find item in stages append to next stage
+      const appendIndex = stageIndex - 1;
+
+      tempArray[appendIndex][1].push(item);
+      setStages(tempArray);
     }
   }
 

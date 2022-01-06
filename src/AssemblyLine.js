@@ -18,7 +18,7 @@ const AssemblyLine = (props) => {
                 {stages[1][1].map((stage, i) => {
 
                     return(
-                        <button key={i}>{stage}</button>
+                        <button value={1} onClick={(e) => props.itemClick(e)} key={i}>{stage}</button>
                     )
                 })}
             </div>
@@ -26,7 +26,7 @@ const AssemblyLine = (props) => {
                 <h2>Testing</h2>
                 {stages[2][1].map((stage, i) => {
                     return(
-                        <button key={i}>{stage}</button>
+                        <button value={2} onClick={(e) => props.itemClick(e)} key={i}>{stage}</button>
                     )
                 })}
             </div>
@@ -34,7 +34,7 @@ const AssemblyLine = (props) => {
                 <h2>Deployment</h2>
                 {stages[3][1].map((stage, i) => {
                     return(
-                        <button key={i}>{stage}</button>
+                        <button value={3} onClick={(e) => props.itemClick(e)} key={i}>{stage}</button>
                     )
                 })}
             </div>

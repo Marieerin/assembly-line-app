@@ -1,4 +1,9 @@
-.assembly-line {
+.assembly-line,
+.assembly-stage {
     display: flex;
     justify-content: space-between;
+}
+
+.assembly-stage {
+    flex-direction: column;
 }
