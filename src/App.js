@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import AssemblyLine from './AssemblyLine';
 
@@ -28,7 +28,7 @@ function App() {
 
     //Remove item from array
     tempArray[stageIndex][1].splice(itemIndex, 1);
-    
+
     // left button
     if(e.button === 0 && stageIndex !== 3) {
       // find item in stages and prepend to next stage
