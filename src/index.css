@@ -1,9 +1,36 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+form {
+    width: 90vw;
+    border-bottom:1px solid grey;
+    margin: 20px;
+    padding: 20px;
+}
 .assembly-line,
 .assembly-stage {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .assembly-stage {
     flex-direction: column;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+button {
+    background-color: #fff;
+    border-radius: 3px;
+    border: solid navy;
+    border-width: 1px 2px 2px 1px;
+    margin: 10px;
+    padding: 5px 10px;
+}
+
+button:hover {
+    background-color: yellow;
 }

@@ -6,18 +6,17 @@ function App() {
   const [stages, setStages] = useState([['Brain Storming', ['one', 'two', 'three']], ['Developmen', []], ['Testing', []], ['Deployment', []]]);
   const [message, setMessage] = useState('')
 
-  console.log(stages);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     let newArray = [...stages[0]]
 
-    newArray[1].push(message);
+    newArray[1].unshift(message);
     setStages([newArray, stages[1], stages[2], stages[3]]);
     setMessage('');  
   };
 
   const handleKeyPress = (e) => {
+    // adds item with enter key
     // check what button then call handleSubmit
   };
 
@@ -27,7 +26,9 @@ function App() {
     const stageIndex = parseInt(e.target.value);
     const itemIndex = stages[stageIndex][1].indexOf(item);
 
+    //Remove item from array
     tempArray[stageIndex][1].splice(itemIndex, 1);
+    
     // left button
     if(e.button === 0 && stageIndex !== 3) {
       // find item in stages and prepend to next stage
@@ -37,7 +38,7 @@ function App() {
       setStages(tempArray);
     } 
     // right button
-    else if (e.button === 2 && stageIndex !== 0 ){
+    else if (e.button === 2 && stageIndex !== 0){
       // find item in stages append to next stage
       const appendIndex = stageIndex - 1;
 
