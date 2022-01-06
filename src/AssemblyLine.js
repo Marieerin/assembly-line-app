@@ -2,19 +2,21 @@ import React, {useState} from "react";
 
 const AssemblyLine = (props) => {
     const [stages, setStages] = useState(props.stages);
+
     return(
         <div className="assembly-line">
             <div className="assembly-stage"> 
                 <h2>Brain Storming</h2>
                 {stages[0][1].map((stage, i) => {
                     return(
-                        <button key={i}>{stage}</button>
+                        <button value={0} onClick={(e) => props.itemClick(e)} key={i}>{stage}</button>
                     )
                 })}
             </div>
             <div className="assembly-stage">
                 <h2>Development</h2>
                 {stages[1][1].map((stage, i) => {
+
                     return(
                         <button key={i}>{stage}</button>
                     )
